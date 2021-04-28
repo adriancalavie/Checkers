@@ -1,0 +1,36 @@
+﻿<Window x:Class="CheckersV4.Views.ScoreBoard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheckersV4.Views"
+        xmlns:viewsmodels="clr-namespace:CheckersV4.ViewModels"
+        mc:Ignorable="d"
+        Title="ScoreBoard" Height="400" Width="560">
+
+    <Window.Background>
+        <ImageBrush ImageSource="../Resources/abstract_bk.bmp"/>
+    </Window.Background>
+    
+    <WrapPanel>
+        <WrapPanel>
+            <Label Content="Name" Height="31" Width="120" BorderThickness="0" FontFamily="Arial" FontSize="20" Foreground="White" FontWeight="Bold"/>
+            <Label Content="Wins" Height="31" Width="120" BorderThickness="0" FontFamily="Arial" FontSize="20" Foreground="White" FontWeight="Bold"/>
+            <Label Content="Losses" Height="31" Width="120" BorderThickness="0" FontFamily="Arial" FontSize="20" Foreground="White" FontWeight="Bold"/>
+            <Label Content="Draws" Height="31" Width="120" BorderThickness="0" FontFamily="Arial" FontSize="20" Foreground="White" FontWeight="Bold"/>
+        </WrapPanel>
+
+        <ListBox Name="lbPlayers" ItemsSource="{Binding Players}" Width="550" Height="300" Background="Transparent" BorderBrush="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <Label Name="txtName"  Content="{Binding Name}" Height="31" Width="120" FontFamily="Arial" FontSize="16" Foreground="White" FontWeight="Bold"/>
+                        <Label Name="txtWins" Content="{Binding Wins}" Height="31" Width="120" FontFamily="Arial" FontSize="16" Foreground="White"/>
+                        <Label Name="txtLosses" Content="{Binding Losses}" Height="31" Width="120" FontFamily="Arial" FontSize="16" Foreground="White"/>
+                        <Label Name="txtDraws" Content="{Binding Draws}" Height="31" Width="120" FontFamily="Arial" FontSize="16" Foreground="White"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </WrapPanel>
+</Window>
