@@ -1,2 +1,2 @@
 # Checkers
-Simple Checkers game made in WPF
+Simple Checkers game made in WPF. Uses MVVM arhitecture.
